@@ -103,12 +103,13 @@ jobs:
           PACKAGE_SIZE: ${{ steps.metadata.outputs.size }}
           RELEASE_NAME: ${{ steps.metadata.outputs.name }}
           RELEASE_NOTES: ${{ steps.metadata.outputs.notes }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
           python3 - <<'PY'
           import json, os, zipfile
           version=os.environ["VERSION"]
           filename=os.path.basename(os.environ["ZIP_PATH"])
-          url=f"https://github.com/${{ github.repository }}/releases/download/v{version}/{filename}"
+          url=f"https://github.com/{os.environ['GITHUB_REPOSITORY']}/releases/download/v{version}/{filename}"
           with open("manifest.json",encoding="utf-8") as f: m=json.load(f)
           m.update({
             "latest_version":version,
