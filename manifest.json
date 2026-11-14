@@ -3,11 +3,11 @@
   "product": "Informatyk-24",
   "channel": "stable",
   "target_environment": "strona5",
-  "latest_version": "0.23.41.0",
+  "latest_version": "0.23.42.0",
   "release_available": true,
   "release_notes_url": "https://raw.githubusercontent.com/informatyk24/informatyk-24-updates/main/changelog.json",
-  "package_url": "https://github.com/informatyk24/informatyk-24-updates/releases/download/v0.23.41.0/Informatyk-24-0.23.41.0-ODPORNOSC-AKTUALIZACJI-I-BACKUP.zip",
-  "package_sha256": "feae4c4ed16edb655376c0d4b0286a82248151449f9b357c695cc7e542832f58",
-  "package_size_bytes": 208643,
+  "package_url": "https://github.com/informatyk24/informatyk-24-updates/releases/download/v0.23.42.0/Informatyk-24-0.23.42.0-OSTATECZNE-PRZYGOTOWANIE-PRODUKCYJNE.zip",
+  "package_sha256": "390da1f0a081df01d7613fd10368fc0dc35d2f61eb459bd8f48f573a3e5d817f",
+  "package_size_bytes": 210047,
   "note": "Aktualizacja Informatyk-24 CMS."
 }
