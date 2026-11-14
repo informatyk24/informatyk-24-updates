@@ -3,6 +3,26 @@
   "product": "Informatyk-24",
   "releases": [
     {
+      "version": "0.23.40.0",
+      "target_environment": "strona5",
+      "stability": "stable",
+      "name": "Informatyk-24 CMS 0.23.40.0 – Testy akceptacyjne i kontrola procesów biznesowych",
+      "summary": "Dodano administratorowi rejestr ośmiu ręcznych testów akceptacyjnych z historią wyników i eksportem JSON. Moduł nie uruchamia operacji biznesowych ani migracji.",
+      "changes": [
+        "Dodano panel Testy akceptacyjne z ośmioma scenariuszami: rejestracja i e-mail, logowanie i reset hasła, izolacja danych firm, koszyk i zamówienie, Tpay i webhook, cykl abonamentu, helpdesk i załączniki, backup i rollback.",
+        "Administrator może zapisać wynik: zaliczony, niezaliczony, zablokowany lub nie testowano.",
+        "Wyniki i uwagi są zapisywane w istniejącym dzienniku audytu administratora; bez nowej tabeli.",
+        "Dodano podsumowanie wyników i eksport raportu JSON.",
+        "Moduł nie wykonuje automatycznie zamówień, płatności, wysyłki e-mail, CRON, backupu ani rollbacku.",
+        "Testy Tpay należy wykonywać wyłącznie w sandboxie operatora.",
+        "Test izolacji należy wykonywać na dwóch kontach testowych.",
+        "Backup, odtworzenie i rollback należy wykonywać wyłącznie na odizolowanej kopii, nigdy na produkcji.",
+        "Dostęp ograniczono do administratora platformy.",
+        "Aktualizacja plikowa: index.php i VERSION.",
+        "Bez migracji SQL i bez zmian konfiguracji serwera."
+      ]
+    },
+    {
       "version": "0.23.39.0",
       "target_environment": "strona5",
       "stability": "stable",
