@@ -3,6 +3,23 @@
   "product": "Informatyk-24",
   "releases": [
     {
+      "version": "0.23.34.0",
+      "target_environment": "strona5",
+      "stability": "stable",
+      "name": "Informatyk-24 CMS 0.23.34.0 – Zaawansowany monitoring wdrożeń",
+      "summary": "Rozbudowa dziennika wdrożeń: filtrowanie, szczegóły zdarzeń, eksport JSON i kontrolowane czyszczenie starych wpisów.",
+      "changes": [
+        "Dodano filtrowanie dziennika według zakresu dat, rodzaju zdarzenia i statusu.",
+        "Dodano podgląd pełnych danych pojedynczego zdarzenia bezpośrednio w panelu.",
+        "Dodano eksport JSON uwzględniający aktywne filtry.",
+        "Dodano ręczne czyszczenie wpisów starszych niż 30, 90, 180 lub 365 dni z potwierdzeniem administratora.",
+        "Operacja retencji zapisuje zdarzenie w dzienniku; zachowane wpisy nie są modyfikowane.",
+        "Dostęp do funkcji pozostaje ograniczony do administratora platformy.",
+        "Eksport zawiera wyłącznie zdarzenia dziennika środowiska strona5.",
+        "Aktualizacja plikowa; migracje SQL nie są wymagane ani uruchamiane."
+      ]
+    },
+    {
       "version": "0.23.33.0",
       "target_environment": "strona5",
       "stability": "stable",
