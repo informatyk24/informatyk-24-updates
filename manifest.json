@@ -3,11 +3,11 @@
   "product": "Informatyk-24",
   "channel": "stable",
   "target_environment": "strona5",
-  "latest_version": "1.0.0",
+  "latest_version": "1.1.0",
   "release_available": true,
   "release_notes_url": "https://raw.githubusercontent.com/informatyk24/informatyk-24-updates/main/changelog.json",
-  "package_url": "https://github.com/informatyk24/informatyk-24-updates/releases/download/v1.0.0/Informatyk-24-CMS-1.0.0-STABLE-STRONA5.zip",
-  "package_sha256": "ec3214497b97e264600e9fa6b2b4a5b0f2dc0b73a6154233c9b736d2593e6d04",
-  "package_size_bytes": 211300,
+  "package_url": "https://github.com/informatyk24/informatyk-24-updates/releases/download/v1.1.0/Informatyk-24-CMS-1.1.0-ANALITYKA-BIZNESOWA-STRONA5.zip",
+  "package_sha256": "c74e4cb8ecb3d2b02908033f6720eeb6985e19d374c68263cf3253d93913fc2f",
+  "package_size_bytes": 208957,
   "note": "Aktualizacja Informatyk-24 CMS."
 }
