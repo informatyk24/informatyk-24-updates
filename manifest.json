@@ -3,11 +3,11 @@
   "product": "Informatyk-24",
   "channel": "stable",
   "target_environment": "strona5",
-  "latest_version": "0.23.30.1",
-  "release_available": false,
+  "latest_version": "0.23.31.0",
+  "release_available": true,
   "release_notes_url": "https://raw.githubusercontent.com/informatyk24/informatyk-24-updates/main/changelog.json",
-  "package_url": null,
-  "package_sha256": null,
-  "package_size_bytes": null,
-  "note": "Wersja 0.23.30.1 jest bieżącą wersją referencyjną środowiska strona5. Jest to hotfix mechanizmu GitHub Update Checker. Paczka do pobrania nie została opublikowana."
+  "package_url": "https://github.com/informatyk24/informatyk-24-updates/releases/download/v0.23.31.0/Informatyk-24-0.23.31.0-AUTOMATYCZNE-POBIERANIE.zip",
+  "package_sha256": "fc0a4e1e3d778a8ffdb04c6156949ae3138ce4a8b4bc324bca3cf38691121bac",
+  "package_size_bytes": 19999,
+  "note": "Wersja 0.23.31.0 dla środowiska strona5. Dodano ręczne pobieranie paczki z centralnego repozytorium GitHub z weryfikacją rozmiaru, SHA-256, wersji i struktury ZIP przed zapisaniem jej w lokalnym menedżerze aktualizacji. Instalacja pozostaje oddzielnym, świadomym działaniem administratora."
 }
