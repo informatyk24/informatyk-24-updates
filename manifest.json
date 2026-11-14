@@ -3,11 +3,11 @@
   "product": "Informatyk-24",
   "channel": "stable",
   "target_environment": "strona5",
-  "latest_version": "0.23.32.0",
+  "latest_version": "0.23.33.0",
   "release_available": true,
   "release_notes_url": "https://raw.githubusercontent.com/informatyk24/informatyk-24-updates/main/changelog.json",
-  "package_url": "https://github.com/informatyk24/informatyk-24-updates/releases/download/v0.23.32.0/Informatyk-24-0.23.32.0-INSTALACJA-JEDNYM-KLIKNI98CIEM.zip",
-  "package_sha256": "6a5973c67d557d19b2534d10135725f1c9bc4d82c176dde4ee061daa0c8b89af",
-  "package_size_bytes": 20644,
-  "note": "Wersja 0.23.32.0 dla środowiska strona5. Dodano centralny mechanizm pobrania i instalacji aktualizacji jednym kliknięciem, z walidacją paczki, kopią bezpieczeństwa, kontrolą postępu i możliwością wycofania zmian."
+  "package_url": "https://github.com/informatyk24/informatyk-24-updates/releases/download/v0.23.33.0/Informatyk-24-0.23.33.0-RAPORTY-WDROZEN.zip",
+  "package_sha256": "c1037af9a0576491445b6d82fb10a6221a1cbf1e0a50a94a93296da81a9e0d92",
+  "package_size_bytes": 21383,
+  "note": "Wersja 0.23.33.0 dla środowiska strona5. Dodano dziennik operacji wdrożeniowych, raport JSON oraz podsumowanie instalacji, wycofań i błędów."
 }
