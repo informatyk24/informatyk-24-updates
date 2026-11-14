@@ -3,6 +3,14 @@
   "product": "Informatyk-24",
   "releases": [
     {
+      "version": "1.3.0",
+      "target_environment": "strona5",
+      "stability": "stable",
+      "name": "Informatyk-24 CMS 1.3.0 – Pulpit administratora i mobilne zaplecze",
+      "summary": "Aktualizacja Informatyk-24 CMS.",
+      "changes": []
+    },
+    {
       "version": "1.2.2",
       "target_environment": "strona5",
       "stability": "stable",
