@@ -105,7 +105,7 @@ jobs:
           RELEASE_NOTES: ${{ steps.metadata.outputs.notes }}
         run: |
           python3 - <<'PY'
-          import json, os
+          import json, os, zipfile
           version=os.environ["VERSION"]
           filename=os.path.basename(os.environ["ZIP_PATH"])
           url=f"https://github.com/${{ github.repository }}/releases/download/v{version}/{filename}"
