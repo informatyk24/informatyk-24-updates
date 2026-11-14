@@ -3,6 +3,14 @@
   "product": "Informatyk-24",
   "releases": [
     {
+      "version": "1.1.1",
+      "target_environment": "strona5",
+      "stability": "stable",
+      "name": "Informatyk-24 CMS 1.1.1 – Hotfix audytu i analityki",
+      "summary": "Aktualizacja Informatyk-24 CMS.",
+      "changes": []
+    },
+    {
       "version": "1.1.0",
       "target_environment": "strona5",
       "stability": "stable",
