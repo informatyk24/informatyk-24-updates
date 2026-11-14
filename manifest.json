@@ -3,11 +3,11 @@
   "product": "Informatyk-24",
   "channel": "stable",
   "target_environment": "strona5",
-  "latest_version": "0.23.37.0",
+  "latest_version": "0.23.38.0",
   "release_available": true,
   "release_notes_url": "https://raw.githubusercontent.com/informatyk24/informatyk-24-updates/main/changelog.json",
-  "package_url": "https://github.com/informatyk24/informatyk-24-updates/releases/download/v0.23.37.0/Informatyk-24-0.23.37.0-KOMPLEKSOWY-AUDYT-CMS.zip",
-  "package_sha256": "b61bd22fa14e4ea386468df3ef1684f6c5021811dac97fc1de62634719ea6bf9",
-  "package_size_bytes": 198433,
-  "note": "Dodano tylko do odczytu audyt głównych modułów CMS, deklaracji tras, obecności tabel i checklistę testów akceptacyjnych."
+  "package_url": "https://github.com/informatyk24/informatyk-24-updates/releases/download/v0.23.38.0/Informatyk-24-0.23.38.0-POPRAWKI-AUDYTU-I-PLATNOSCI.zip",
+  "package_sha256": "111efd7a7385ab86c9ef788f997f51f73a0305fc1f27f36686a5dfcd24fb65d2",
+  "package_size_bytes": 198725,
+  "note": "Usunięto dwa fałszywe ostrzeżenia audytu tras oraz dodano bezpośredni skrót do kolejki płatności oczekujących."
 }
