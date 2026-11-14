@@ -3,6 +3,17 @@
   "product": "Informatyk-24",
   "releases": [
     {
+      "version": "0.23.30.0",
+      "target_environment": "strona5",
+      "stability": "stable",
+      "changes": [
+        "Dodano centralne sprawdzanie aktualizacji z publicznego repozytorium GitHub.",
+        "Dodano porównanie wersji zainstalowanej z najnowszą wersją stabilną.",
+        "Dodano prezentację listy zmian wydania.",
+        "Sprawdzanie aktualizacji nie pobiera ani nie instaluje automatycznie paczek."
+      ]
+    },
+    {
       "version": "0.23.29.0",
       "target_environment": "strona5",
       "stability": "stable",
