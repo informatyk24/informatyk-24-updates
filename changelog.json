@@ -1,0 +1,17 @@
+{
+  "schema": "i24-changelog-v1",
+  "product": "Informatyk-24",
+  "releases": [
+    {
+      "version": "0.23.29.0",
+      "target_environment": "strona5",
+      "stability": "stable",
+      "changes": [
+        "Dodano szczegóły błędów w dzienniku aktualizacji.",
+        "Dodano czyszczenie wpisów operation_failed bez usuwania historii udanych wdrożeń.",
+        "Operacja czyszczenia dziennika jest rejestrowana.",
+        "Wydanie nie wymaga migracji SQL."
+      ]
+    }
+  ]
+}
