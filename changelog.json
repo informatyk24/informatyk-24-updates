@@ -3,6 +3,25 @@
   "product": "Informatyk-24",
   "releases": [
     {
+      "version": "0.23.35.0",
+      "target_environment": "strona5",
+      "stability": "stable",
+      "name": "Informatyk-24 CMS 0.23.35.0 – Centrum diagnostyczne systemu",
+      "summary": "Rozbudowano diagnostykę systemu o limity PHP, skrypty CRON, gotowość backupów, historię kontroli i eksport raportu JSON.",
+      "changes": [
+        "Rozszerzono kontrolę konfiguracji PHP o memory_limit, max_execution_time, upload_max_filesize i post_max_size.",
+        "Dodano kontrolę relacji limitów uploadu.",
+        "Dodano kontrolę obecności i czytelności skryptów CRON automatyzacji backupów, monitoringu backupów i subskrypcji.",
+        "Dodano wyszukiwanie najnowszego archiwum kopii w typowych katalogach prywatnych.",
+        "Dodano eksport raportu diagnostycznego w formacie JSON.",
+        "Dodano historię wyników kontroli w prywatnym storage, jeśli katalog istnieje i jest zapisywalny.",
+        "Diagnostyka pozostaje dostępna wyłącznie dla administratora platformy.",
+        "Kontrole mają charakter odczytowy; nie zmieniają konfiguracji serwera, uprawnień ani danych biznesowych.",
+        "Nie dodano migracji SQL ani automatycznego uruchamiania zadań CRON.",
+        "Weryfikacja obecności skryptu CRON i archiwum nie potwierdza wykonania zadania ani integralności kopii."
+      ]
+    },
+    {
       "version": "0.23.34.0",
       "target_environment": "strona5",
       "stability": "stable",
