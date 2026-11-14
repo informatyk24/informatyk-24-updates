@@ -7,7 +7,7 @@
   "release_available": true,
   "release_notes_url": "https://raw.githubusercontent.com/informatyk24/informatyk-24-updates/main/changelog.json",
   "package_url": "https://github.com/informatyk24/informatyk-24-updates/releases/download/v1.3.1/Informatyk-24-CMS-1.3.1-MENU-MOBILE-TRYB-CIEMNY-STRONA5.zip",
-  "package_sha256": "d206f848f6e8e62a37984ffdf84a7f241274c88692fde3956e9bcb8e8043cff4",
-  "package_size_bytes": 239380,
+  "package_sha256": "315aab35eb04e3b1e71b6d7deed637a052cf4d2350da5f9076dae84e1967398a",
+  "package_size_bytes": 237926,
   "note": "Aktualizacja Informatyk-24 CMS."
 }
