@@ -3,6 +3,18 @@
   "product": "Informatyk-24",
   "releases": [
     {
+      "version": "0.23.33.0",
+      "target_environment": "strona5",
+      "stability": "stable",
+      "changes": [
+        "Dodano dziennik operacji obejmujący instalacje, wycofania, błędy i zdarzenia aktualizacji.",
+        "Dodano eksport raportu wdrożeniowego w formacie JSON.",
+        "Dodano podsumowanie liczby instalacji, wycofań, błędów i pozostałych zdarzeń.",
+        "Zachowano kopie bezpieczeństwa, rollback, kontrolę SHA-256 i eksport CSV.",
+        "Migracje SQL nie są automatycznie uruchamiane."
+      ]
+    },
+    {
       "version": "0.23.32.0",
       "target_environment": "strona5",
       "stability": "stable",
