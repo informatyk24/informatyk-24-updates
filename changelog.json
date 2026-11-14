@@ -3,6 +3,24 @@
   "product": "Informatyk-24",
   "releases": [
     {
+      "version": "0.23.37.0",
+      "target_environment": "strona5",
+      "stability": "stable",
+      "name": "Informatyk-24 CMS 0.23.37.0 – Kompleksowy audyt CMS",
+      "summary": "Dodano tylko do odczytu audyt głównych modułów CMS, deklaracji tras, obecności tabel i checklistę testów akceptacyjnych.",
+      "changes": [
+        "Dodano panel administratora Kompleksowy audyt CMS.",
+        "Dodano kontrolę deklaracji tras dla rejestracji, logowania, katalogu, koszyka, zamówień, rozliczeń, abonamentów, helpdesku, audytu i aktualizacji.",
+        "Dodano kontrolę obecności tabel wymaganych przez główne moduły.",
+        "Dodano kontrolę liczby aktywnych usług w katalogu z oczekiwanym minimum 48.",
+        "Dodano podsumowanie OK, uwag i kontroli nierozstrzygniętych.",
+        "Dodano checklistę scenariuszy wymagających ręcznego testu: rejestracja, logowanie, izolacja firm, zamówienie, Tpay, abonamenty, helpdesk, backup i rollback.",
+        "Dodano eksport raportu JSON.",
+        "Audyt działa tylko do odczytu; nie wykonuje zmian danych, migracji, płatności ani wysyłki wiadomości.",
+        "Raport wyraźnie rozróżnia obecność tras i tabel od faktycznego przejścia procesu biznesowego."
+      ]
+    },
+    {
       "version": "0.23.36.0",
       "target_environment": "strona5",
       "stability": "stable",
