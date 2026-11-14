@@ -3,6 +3,16 @@
   "product": "Informatyk-24",
   "releases": [
     {
+      "version": "0.23.30.1",
+      "target_environment": "strona5",
+      "stability": "stable",
+      "changes": [
+        "Naprawiono strukturę paczki hotfixa Update Managera.",
+        "Dodano obsługę odświeżania manifestu GitHub z ograniczeniem wpływu pamięci podręcznej.",
+        "Ujednolicono wersję referencyjną repozytorium z wdrożonym hotfixem."
+      ]
+    },
+    {
       "version": "0.23.30.0",
       "target_environment": "strona5",
       "stability": "stable",
