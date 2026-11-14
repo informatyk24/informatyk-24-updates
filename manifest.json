@@ -3,11 +3,11 @@
   "product": "Informatyk-24",
   "channel": "stable",
   "target_environment": "strona5",
-  "latest_version": "0.23.29.0",
+  "latest_version": "0.23.30.0",
   "release_available": false,
   "release_notes_url": "https://raw.githubusercontent.com/informatyk24/informatyk-24-updates/main/changelog.json",
   "package_url": null,
   "package_sha256": null,
   "package_size_bytes": null,
-  "note": "Punkt bazowy repozytorium. Paczka wydania nie została jeszcze opublikowana."
+  "note": "Wersja 0.23.30.0 jest bieżącą wersją referencyjną środowiska strona5. Paczka do pobrania nie została jeszcze opublikowana."
 }
