@@ -3,6 +3,26 @@
   "product": "Informatyk-24",
   "releases": [
     {
+      "version": "0.23.39.0",
+      "target_environment": "strona5",
+      "stability": "stable",
+      "name": "Informatyk-24 CMS 0.23.39.0 – Optymalizacja wydajności",
+      "summary": "Optymalizacja zapytań katalogu i listy zamówień oraz dodanie panelu diagnostyki wydajności MariaDB — bez zmian schematu bazy.",
+      "changes": [
+        "Katalog usług pobiera wyłącznie kolumny potrzebne do wyświetlenia kart; usunięto nieużywane pobieranie pełnego opisu.",
+        "Wyszukiwanie zamówień po nazwie usługi wykorzystuje warunek EXISTS.",
+        "Zapytanie zliczające zamówienia nie wykonuje już LEFT JOIN do order_items i COUNT DISTINCT.",
+        "Statystyki statusów zamówień pobierane są jednym zapytaniem agregującym zamiast czterech oddzielnych zapytań.",
+        "Dodano pozycję Optymalizacja wydajności w menu administratora.",
+        "Dodano tylko do odczytu raport wersji MariaDB, rozmiaru bazy, największych tabel, statusu slow query log i kluczowych indeksów.",
+        "Raport pokazuje rekomendowane indeksy i nie tworzy ich automatycznie.",
+        "Pokazano czas wygenerowania samego raportu z wyraźnym zastrzeżeniem, że nie jest to benchmark aplikacji.",
+        "Aktualizacja plikowa: index.php i VERSION.",
+        "Bez migracji SQL, ALTER TABLE, CREATE INDEX i zmian danych klientów.",
+        "Panel dostępny wyłącznie dla administratora platformy."
+      ]
+    },
+    {
       "version": "0.23.38.0",
       "target_environment": "strona5",
       "stability": "stable",
