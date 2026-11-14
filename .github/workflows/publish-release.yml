@@ -1,0 +1,145 @@
+name: Publish Informatyk-24 update
+
+on:
+  push:
+    paths:
+      - "incoming/*.zip"
+  workflow_dispatch:
+    inputs:
+      package_path:
+        description: "Committed ZIP path, e.g. incoming/Informatyk-24-0.23.34.0.zip"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-informatyk24-release
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && !startsWith(github.event.head_commit.message, '[skip release]'))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Select package
+        id: package
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            ZIP="${{ inputs.package_path }}"
+          else
+            ZIP="$(git diff-tree --no-commit-id --name-only -r "${{ github.sha }}" | grep -E '^incoming/.*\.zip$' | head -n 1)"
+          fi
+          test -n "$ZIP" || { echo "No ZIP package found in incoming/"; exit 1; }
+          test -f "$ZIP" || { echo "Package not found: $ZIP"; exit 1; }
+          echo "zip=$ZIP" >> "$GITHUB_OUTPUT"
+
+      - name: Validate package and prepare metadata
+        id: metadata
+        env:
+          ZIP_PATH: ${{ steps.package.outputs.zip }}
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, re, zipfile
+          from pathlib import PurePosixPath
+          p=os.environ["ZIP_PATH"]
+          with zipfile.ZipFile(p) as z:
+              bad=z.testzip()
+              if bad: raise SystemExit(f"Corrupt ZIP member: {bad}")
+              names=z.namelist()
+              if "release.json" not in names: raise SystemExit("Missing release.json")
+              meta=json.loads(z.read("release.json"))
+              if meta.get("format") != "i24-update-v1": raise SystemExit("Unsupported package format")
+              version=str(meta.get("version",""))
+              if not re.fullmatch(r"\d+\.\d+\.\d+(?:\.\d+)?", version): raise SystemExit("Invalid version")
+              if meta.get("target_environment") != "strona5": raise SystemExit("Wrong target_environment")
+              listed=meta.get("files")
+              if not isinstance(listed,list) or not listed: raise SystemExit("No file checksums in release.json")
+              actual=set(names)
+              for item in listed:
+                  rel=item.get("path","")
+                  q=PurePosixPath(rel)
+                  if not rel or q.is_absolute() or ".." in q.parts: raise SystemExit(f"Unsafe path: {rel}")
+                  member="files/"+rel
+                  if member not in actual: raise SystemExit(f"Missing package file: {member}")
+                  digest=hashlib.sha256(z.read(member)).hexdigest()
+                  if digest.lower()!=str(item.get("sha256","")).lower(): raise SystemExit(f"SHA-256 mismatch: {rel}")
+              if len(listed) != len(set(x.get("path") for x in listed)): raise SystemExit("Duplicate file entries")
+          sha=hashlib.sha256(open(p,"rb").read()).hexdigest()
+          size=os.path.getsize(p)
+          name=meta.get("name") or f"Informatyk-24 CMS {version}"
+          notes=meta.get("notes",{}).get("summary","Aktualizacja Informatyk-24 CMS.")
+          with open(os.environ["GITHUB_OUTPUT"],"a") as f:
+              f.write(f"version={version}\nsha={sha}\nsize={size}\nname={name}\nnotes={notes}\n")
+          PY
+
+      - name: Publish GitHub Release and ZIP asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ZIP_PATH: ${{ steps.package.outputs.zip }}
+          VERSION: ${{ steps.metadata.outputs.version }}
+          RELEASE_NAME: ${{ steps.metadata.outputs.name }}
+          RELEASE_NOTES: ${{ steps.metadata.outputs.notes }}
+        run: |
+          TAG="v$VERSION"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release $TAG already exists; refusing to overwrite."
+            exit 1
+          fi
+          gh release create "$TAG" "$ZIP_PATH#Informatyk-24 CMS update package" --title "$RELEASE_NAME" --notes "$RELEASE_NOTES"
+
+      - name: Update manifest and changelog
+        env:
+          ZIP_PATH: ${{ steps.package.outputs.zip }}
+          VERSION: ${{ steps.metadata.outputs.version }}
+          PACKAGE_SHA: ${{ steps.metadata.outputs.sha }}
+          PACKAGE_SIZE: ${{ steps.metadata.outputs.size }}
+          RELEASE_NAME: ${{ steps.metadata.outputs.name }}
+          RELEASE_NOTES: ${{ steps.metadata.outputs.notes }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          version=os.environ["VERSION"]
+          filename=os.path.basename(os.environ["ZIP_PATH"])
+          url=f"https://github.com/${{ github.repository }}/releases/download/v{version}/{filename}"
+          with open("manifest.json",encoding="utf-8") as f: m=json.load(f)
+          m.update({
+            "latest_version":version,
+            "release_available":True,
+            "target_environment":"strona5",
+            "package_url":url,
+            "package_sha256":os.environ["PACKAGE_SHA"],
+            "package_size_bytes":int(os.environ["PACKAGE_SIZE"]),
+            "note":os.environ["RELEASE_NOTES"]
+          })
+          with open("manifest.json","w",encoding="utf-8") as f: json.dump(m,f,ensure_ascii=False,indent=2); f.write("\n")
+          with open("changelog.json",encoding="utf-8") as f: c=json.load(f)
+          with zipfile.ZipFile(os.environ["ZIP_PATH"]) as z: meta=json.loads(z.read("release.json"))
+          notes=meta.get("notes",{})
+          changes=[]
+          for section in notes.get("sections",[]):
+            changes.extend(section.get("items",[]))
+          entry={"version":version,"target_environment":"strona5","stability":"stable","name":os.environ["RELEASE_NAME"],"summary":notes.get("summary",os.environ["RELEASE_NOTES"]),"changes":changes}
+          releases=[x for x in c.get("releases",[]) if x.get("version")!=version]
+          c["releases"]=[entry]+releases
+          with open("changelog.json","w",encoding="utf-8") as f: json.dump(c,f,ensure_ascii=False,indent=2); f.write("\n")
+          PY
+
+      - name: Remove staged ZIP and commit metadata
+        env:
+          ZIP_PATH: ${{ steps.package.outputs.zip }}
+          VERSION: ${{ steps.metadata.outputs.version }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -- "$ZIP_PATH"
+          git add manifest.json changelog.json
+          git commit -m "[skip release] Publish Informatyk-24 $VERSION metadata"
+          git push
