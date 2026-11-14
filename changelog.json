@@ -3,6 +3,18 @@
   "product": "Informatyk-24",
   "releases": [
     {
+      "version": "0.23.32.0",
+      "target_environment": "strona5",
+      "stability": "stable",
+      "changes": [
+        "Dodano centralny przycisk pobrania i instalacji aktualizacji jednym kliknięciem.",
+        "Dodano kontrolę integralności pobranej paczki na podstawie SHA-256, rozmiaru i struktury ZIP.",
+        "Dodano wykonanie kopii bezpieczeństwa przed instalacją oraz mechanizm wycofania zmian.",
+        "Dodano pasek postępu i blokadę równoległych operacji aktualizacji.",
+        "Migracje SQL pozostają poza automatycznym procesem instalacji."
+      ]
+    },
+    {
       "version": "0.23.31.0",
       "target_environment": "strona5",
       "stability": "stable",
