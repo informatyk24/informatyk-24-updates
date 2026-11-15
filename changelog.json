@@ -3,6 +3,14 @@
   "product": "Informatyk-24",
   "releases": [
     {
+      "version": "1.5.2",
+      "target_environment": "strona5",
+      "stability": "stable",
+      "name": "Kreator usług – dowolna nawigacja (poprawiony manifest)",
+      "summary": "Aktualizacja Informatyk-24 CMS.",
+      "changes": []
+    },
+    {
       "version": "1.5.1",
       "target_environment": "strona5",
       "stability": "stable",
