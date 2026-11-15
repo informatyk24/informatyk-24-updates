@@ -3,11 +3,11 @@
   "product": "Informatyk-24",
   "channel": "stable",
   "target_environment": "strona5",
-  "latest_version": "1.4.5",
+  "latest_version": "1.4.6",
   "release_available": true,
   "release_notes_url": "https://raw.githubusercontent.com/informatyk24/informatyk-24-updates/main/changelog.json",
-  "package_url": "https://github.com/informatyk24/informatyk-24-updates/releases/download/v1.4.5/Informatyk-24-CMS-1.4.5-STRONA5.zip",
-  "package_sha256": "0cbb989418fb130845b8f7a3c1af5a713f906cba763e938aef26280cbe746557",
-  "package_size_bytes": 228312,
+  "package_url": "https://github.com/informatyk24/informatyk-24-updates/releases/download/v1.4.6/Informatyk-24-CMS-1.4.6-STRONA5.zip",
+  "package_sha256": "876263f052d1213376a73a30d445b9b7e6be71b3cac45d5221afc5f01e2ae64a",
+  "package_size_bytes": 232233,
   "note": "Aktualizacja Informatyk-24 CMS."
 }
