@@ -3,6 +3,14 @@
   "product": "Informatyk-24",
   "releases": [
     {
+      "version": "1.4.0",
+      "target_environment": "strona5",
+      "stability": "stable",
+      "name": "Kondycja kont i kolejki operacyjnej",
+      "summary": "Aktualizacja Informatyk-24 CMS.",
+      "changes": []
+    },
+    {
       "version": "1.3.9",
       "target_environment": "strona5",
       "stability": "stable",
