@@ -3,6 +3,14 @@
   "product": "Informatyk-24",
   "releases": [
     {
+      "version": "1.3.5",
+      "target_environment": "strona5",
+      "stability": "stable",
+      "name": "Informatyk-24 CMS 1.3.5 – poprawka menu i front-endu",
+      "summary": "Aktualizacja Informatyk-24 CMS.",
+      "changes": []
+    },
+    {
       "version": "1.3.4",
       "target_environment": "strona5",
       "stability": "stable",
